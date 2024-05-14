@@ -13,7 +13,7 @@ export function useAuth() {
 
   const setAuthTokens = async ({ accessToken }: setAuthTokensType) => {
     localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
-    await setServerSentCookie({ accessToken: accessToken });
+    await setServerSentCookie({ accessToken: accessToken }); // To create a 1st party cookie
   };
   const logOut = () => {
     localStorage.removeItem(ACCESS_TOKEN_KEY);
